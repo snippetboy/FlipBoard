@@ -1,0 +1,34 @@
+﻿<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>FlipBoard</title>
+  <link rel="stylesheet" type="text/css" href="flipboard.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+  <script src="flipboard.js"></script>
+</head>
+
+<body>
+  <h1>FlipBoard</h1>
+  <p data-bind="visible: !layout()">
+    <i>FlipBoard</i> is a one-player board game played on a bicolored N&times;N square grid.<br />
+    Clicking a square inverts the colors of all squares in the same row and the same column.<br />
+    Your mission, should you decide to accept it, is to flip all cells to a red state!
+  </p>
+  <select data-bind="options: availableLayouts, optionsText: 'value', optionsValue: 'key', value: layout, optionsCaption: 'Choose layout...'"></select>
+  <span data-bind="visible: layout">
+    <select data-bind="options: availableCellSizes, optionsText: 'value', optionsValue: 'key', value: cellSize"></select>
+    <button data-bind="click: onClear">Clear</button>
+    <button data-bind="click: onShuffle">Shuffle</button>
+    <span data-bind="html: status"></span>
+  </span>
+  <hr data-bind="visible: layout" />
+  <div id="flipboard" data-bind="style: { width: boardSize, height: boardSize }">
+    <div data-bind="foreach: cells">
+      <button data-bind="click: $parent.onMove($index()), style: { width: $parent.cellSize, height: $parent.cellSize }, css: { hilight: $parent.cells()[$index()] }"></button>
+    </div>
+  </div>
+</body>
+
+</html>
