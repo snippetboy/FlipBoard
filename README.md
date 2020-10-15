@@ -20,14 +20,10 @@ Your mission, should you decide to accept it, is to flip all cells to a red stat
 The game itself is more like a mathematical game and quite boring to play.
 But it has some interesting characteristics:
 - Start with a cleared board.
-If the layout is an odd number, you just have to click each square in the top row in an arbitrary order to win.
-If the layout is an even number, you just have to click each square on the board in an arbitrary order to win.
+If the layout is an *odd* number, you just have to click each square in the top row in an arbitrary order to win.
+If the layout is an *even* number, you just have to click each square on the board in an arbitrary order to win.
 - Start with a shuffled board.
-If the layout is an odd number, 
-you just have to click each cleared square from the initial configuration in an arbitrary order to win.
-
-
-
+If the layout is an *odd* number, you just have to click each *cleared* square from the starting configuration in an arbitrary order to win.
 
 ## Overview
 
